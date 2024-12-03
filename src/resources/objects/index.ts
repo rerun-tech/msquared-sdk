@@ -2,15 +2,15 @@
 
 export {
   ObjectInstances,
-  type MmlObjectInstance,
-  type MmlObjectInstanceLogAccess,
+  type MMLObjectInstance,
+  type MMLObjectInstanceLogAccess,
   type ObjectInstanceListResponse,
   type ObjectInstanceUsageResponse,
   type ObjectInstanceCreateParams,
   type ObjectInstanceUpdateParams,
   type ObjectInstanceListParams,
   type ObjectInstanceUsageParams,
-} from './object-instances/index';
+} from './object-instances';
 export { ObjectInstancesQuota, type ObjectInstancesQuotaListResponse } from './object-instances-quota';
-export { ObjectTemplates, type MmlObjectTemplate } from './object-templates/index';
+export { ObjectTemplates, type MMLObjectTemplate } from './object-templates/index';
 export { Objects } from './objects';

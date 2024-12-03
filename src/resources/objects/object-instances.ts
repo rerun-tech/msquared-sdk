@@ -1,14 +1,10 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '../../../resource';
-import { isRequestOptions } from '../../../core';
-import * as Core from '../../../core';
-import * as QuotaAPI from './quota';
-import { MmlObjectInstanceQuota, Quota } from './quota';
+import { APIResource } from '../../resource';
+import { isRequestOptions } from '../../core';
+import * as Core from '../../core';
 
 export class ObjectInstances extends APIResource {
-  quota: QuotaAPI.Quota = new QuotaAPI.Quota(this._client);
-
   /**
    * Create an MML Object Instance
    */
@@ -16,7 +12,7 @@ export class ObjectInstances extends APIResource {
     projectId: string,
     body: ObjectInstanceCreateParams,
     options?: Core.RequestOptions,
-  ): Core.APIPromise<MmlObjectInstance> {
+  ): Core.APIPromise<MMLObjectInstance> {
     return this._client.post(`/v1/mml-objects/${projectId}/object-instances/`, { body, ...options });
   }
 
@@ -27,7 +23,7 @@ export class ObjectInstances extends APIResource {
     projectId: string,
     instanceId: string,
     options?: Core.RequestOptions,
-  ): Core.APIPromise<MmlObjectInstance> {
+  ): Core.APIPromise<MMLObjectInstance> {
     return this._client.get(`/v1/mml-objects/${projectId}/object-instances/${instanceId}`, options);
   }
 
@@ -39,7 +35,7 @@ export class ObjectInstances extends APIResource {
     instanceId: string,
     body: ObjectInstanceUpdateParams,
     options?: Core.RequestOptions,
-  ): Core.APIPromise<MmlObjectInstance> {
+  ): Core.APIPromise<MMLObjectInstance> {
     return this._client.post(`/v1/mml-objects/${projectId}/object-instances/${instanceId}`, {
       body,
       ...options,
@@ -83,7 +79,7 @@ export class ObjectInstances extends APIResource {
     projectId: string,
     instanceId: string,
     options?: Core.RequestOptions,
-  ): Core.APIPromise<MmlObjectInstanceLogAccess> {
+  ): Core.APIPromise<MMLObjectInstanceLogAccess> {
     return this._client.get(
       `/v1/mml-objects/${projectId}/object-instances/${instanceId}/log-access`,
       options,
@@ -106,18 +102,18 @@ export class ObjectInstances extends APIResource {
   }
 }
 
-export interface MmlObjectInstance {
+export interface MMLObjectInstance {
   id: string;
 
   createdAt: string;
 
-  createdBy: MmlObjectInstance.UnionMember0 | MmlObjectInstance.UnionMember1;
+  createdBy: MMLObjectInstance.UnionMember0 | MMLObjectInstance.UnionMember1;
 
   enabled: boolean;
 
   name: string;
 
-  source: MmlObjectInstance.UnionMember0 | MmlObjectInstance.UnionMember1;
+  source: MMLObjectInstance.UnionMember0 | MMLObjectInstance.UnionMember1;
 
   url: string;
 
@@ -126,7 +122,7 @@ export interface MmlObjectInstance {
   parameters?: Record<string, unknown>;
 }
 
-export namespace MmlObjectInstance {
+export namespace MMLObjectInstance {
   export interface UnionMember0 {
     type: 'user';
 
@@ -170,7 +166,7 @@ export namespace MmlObjectInstance {
   }
 }
 
-export interface MmlObjectInstanceLogAccess {
+export interface MMLObjectInstanceLogAccess {
   token: string;
 
   url: string;
@@ -181,7 +177,7 @@ export interface ObjectInstanceListResponse {
 
   limit: number;
 
-  objects: Array<MmlObjectInstance>;
+  objects: Array<MMLObjectInstance>;
 
   offset: number;
 
@@ -326,12 +322,10 @@ export interface ObjectInstanceUsageParams {
   startTime: string;
 }
 
-ObjectInstances.Quota = Quota;
-
 export declare namespace ObjectInstances {
   export {
-    type MmlObjectInstance as MmlObjectInstance,
-    type MmlObjectInstanceLogAccess as MmlObjectInstanceLogAccess,
+    type MMLObjectInstance as MMLObjectInstance,
+    type MMLObjectInstanceLogAccess as MMLObjectInstanceLogAccess,
     type ObjectInstanceListResponse as ObjectInstanceListResponse,
     type ObjectInstanceUsageResponse as ObjectInstanceUsageResponse,
     type ObjectInstanceCreateParams as ObjectInstanceCreateParams,
@@ -339,6 +333,4 @@ export declare namespace ObjectInstances {
     type ObjectInstanceListParams as ObjectInstanceListParams,
     type ObjectInstanceUsageParams as ObjectInstanceUsageParams,
   };
-
-  export { Quota as Quota, type MmlObjectInstanceQuota as MmlObjectInstanceQuota };
 }

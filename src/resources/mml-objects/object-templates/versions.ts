@@ -14,7 +14,7 @@ export class Versions extends APIResource {
     templateId: string,
     body: VersionCreateParams,
     options?: Core.RequestOptions,
-  ): Core.APIPromise<ObjectTemplatesVersionsAPI.MmlObjectTemplateVersion> {
+  ): Core.APIPromise<ObjectTemplatesVersionsAPI.MMLObjectTemplateVersion> {
     return this._client.post(`/v1/mml-objects/${projectId}/object-templates/${templateId}/versions/`, {
       body,
       ...options,
@@ -29,7 +29,7 @@ export class Versions extends APIResource {
     templateId: string,
     versionId: string,
     options?: Core.RequestOptions,
-  ): Core.APIPromise<ObjectTemplatesVersionsAPI.MmlObjectTemplateVersion> {
+  ): Core.APIPromise<ObjectTemplatesVersionsAPI.MMLObjectTemplateVersion> {
     return this._client.get(
       `/v1/mml-objects/${projectId}/object-templates/${templateId}/versions/${versionId}/`,
       options,
@@ -45,7 +45,7 @@ export class Versions extends APIResource {
     versionId: string,
     body: VersionUpdateParams,
     options?: Core.RequestOptions,
-  ): Core.APIPromise<ObjectTemplatesVersionsAPI.MmlObjectTemplateVersion> {
+  ): Core.APIPromise<ObjectTemplatesVersionsAPI.MMLObjectTemplateVersion> {
     return this._client.post(
       `/v1/mml-objects/${projectId}/object-templates/${templateId}/versions/${versionId}/`,
       { body, ...options },
@@ -89,7 +89,7 @@ export interface VersionListResponse {
 
   offset: number;
 
-  templateVersions: Array<ObjectTemplatesVersionsAPI.MmlObjectTemplateVersion>;
+  templateVersions: Array<ObjectTemplatesVersionsAPI.MMLObjectTemplateVersion>;
 
   totalResults: number;
 }

@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
-import * as QuotaAPI from './object-instances/quota';
 
 export class ObjectInstancesQuota extends APIResource {
   /**
@@ -14,7 +13,15 @@ export class ObjectInstancesQuota extends APIResource {
 }
 
 export interface ObjectInstancesQuotaListResponse {
-  quota: QuotaAPI.MmlObjectInstanceQuota;
+  quota: ObjectInstancesQuotaListResponse.Quota;
+}
+
+export namespace ObjectInstancesQuotaListResponse {
+  export interface Quota {
+    current: number;
+
+    limit: number;
+  }
 }
 
 export declare namespace ObjectInstancesQuota {

@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-export { MmlObjects } from './mml-objects';
+export { MMLObjects } from './mml-objects';
 export {
   ObjectInstancesUsage,
   type ObjectInstancesUsageListResponse,

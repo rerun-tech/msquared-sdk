@@ -1,12 +1,10 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from '../../resource';
-import * as ObjectInstancesQuotaAPI from './object-instances-quota';
-import { ObjectInstancesQuota, ObjectInstancesQuotaListResponse } from './object-instances-quota';
-import * as ObjectInstancesAPI from './object-instances/object-instances';
+import * as ObjectInstancesAPI from './object-instances';
 import {
-  MmlObjectInstance,
-  MmlObjectInstanceLogAccess,
+  MMLObjectInstance,
+  MMLObjectInstanceLogAccess,
   ObjectInstanceCreateParams,
   ObjectInstanceListParams,
   ObjectInstanceListResponse,
@@ -14,9 +12,11 @@ import {
   ObjectInstanceUsageParams,
   ObjectInstanceUsageResponse,
   ObjectInstances,
-} from './object-instances/object-instances';
+} from './object-instances';
+import * as ObjectInstancesQuotaAPI from './object-instances-quota';
+import { ObjectInstancesQuota, ObjectInstancesQuotaListResponse } from './object-instances-quota';
 import * as ObjectTemplatesAPI from './object-templates/object-templates';
-import { MmlObjectTemplate, ObjectTemplates } from './object-templates/object-templates';
+import { MMLObjectTemplate, ObjectTemplates } from './object-templates/object-templates';
 
 export class Objects extends APIResource {
   objectInstances: ObjectInstancesAPI.ObjectInstances = new ObjectInstancesAPI.ObjectInstances(this._client);
@@ -32,8 +32,8 @@ Objects.ObjectTemplates = ObjectTemplates;
 export declare namespace Objects {
   export {
     ObjectInstances as ObjectInstances,
-    type MmlObjectInstance as MmlObjectInstance,
-    type MmlObjectInstanceLogAccess as MmlObjectInstanceLogAccess,
+    type MMLObjectInstance as MMLObjectInstance,
+    type MMLObjectInstanceLogAccess as MMLObjectInstanceLogAccess,
     type ObjectInstanceListResponse as ObjectInstanceListResponse,
     type ObjectInstanceUsageResponse as ObjectInstanceUsageResponse,
     type ObjectInstanceCreateParams as ObjectInstanceCreateParams,
@@ -47,5 +47,5 @@ export declare namespace Objects {
     type ObjectInstancesQuotaListResponse as ObjectInstancesQuotaListResponse,
   };
 
-  export { ObjectTemplates as ObjectTemplates, type MmlObjectTemplate as MmlObjectTemplate };
+  export { ObjectTemplates as ObjectTemplates, type MMLObjectTemplate as MMLObjectTemplate };
 }

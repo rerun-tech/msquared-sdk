@@ -8,7 +8,7 @@ import * as API from './resources/index';
 import { Profile, ProfileResource } from './resources/profile';
 import { ProjectCreateParams, Projects } from './resources/projects';
 import { Identity } from './resources/identity/identity';
-import { MmlObjects } from './resources/mml-objects/mml-objects';
+import { MMLObjects } from './resources/mml-objects/mml-objects';
 import { Objects } from './resources/objects/objects';
 import {
   Organization,
@@ -117,7 +117,7 @@ export class MSquared extends Core.APIClient {
   projects: API.Projects = new API.Projects(this);
   profile: API.ProfileResource = new API.ProfileResource(this);
   objects: API.Objects = new API.Objects(this);
-  mmlObjects: API.MmlObjects = new API.MmlObjects(this);
+  mmlObjects: API.MMLObjects = new API.MMLObjects(this);
   worlds: API.Worlds = new API.Worlds(this);
 
   protected override defaultQuery(): Core.DefaultQuery | undefined {
@@ -157,7 +157,7 @@ MSquared.Identity = Identity;
 MSquared.Projects = Projects;
 MSquared.ProfileResource = ProfileResource;
 MSquared.Objects = Objects;
-MSquared.MmlObjects = MmlObjects;
+MSquared.MMLObjects = MMLObjects;
 MSquared.Worlds = Worlds;
 export declare namespace MSquared {
   export type RequestOptions = Core.RequestOptions;
@@ -179,7 +179,7 @@ export declare namespace MSquared {
 
   export { Objects as Objects };
 
-  export { MmlObjects as MmlObjects };
+  export { MMLObjects as MMLObjects };
 
   export { Worlds as Worlds, type WorldQuota as WorldQuota };
 

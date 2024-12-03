@@ -172,26 +172,20 @@ Methods:
 
 Types:
 
-- <code><a href="./src/resources/objects/object-instances/object-instances.ts">MmlObjectInstance</a></code>
-- <code><a href="./src/resources/objects/object-instances/object-instances.ts">MmlObjectInstanceLogAccess</a></code>
-- <code><a href="./src/resources/objects/object-instances/object-instances.ts">ObjectInstanceListResponse</a></code>
-- <code><a href="./src/resources/objects/object-instances/object-instances.ts">ObjectInstanceUsageResponse</a></code>
+- <code><a href="./src/resources/objects/object-instances.ts">MMLObjectInstance</a></code>
+- <code><a href="./src/resources/objects/object-instances.ts">MMLObjectInstanceLogAccess</a></code>
+- <code><a href="./src/resources/objects/object-instances.ts">ObjectInstanceListResponse</a></code>
+- <code><a href="./src/resources/objects/object-instances.ts">ObjectInstanceUsageResponse</a></code>
 
 Methods:
 
-- <code title="post /v1/mml-objects/{projectId}/object-instances/">client.objects.objectInstances.<a href="./src/resources/objects/object-instances/object-instances.ts">create</a>(projectId, { ...params }) -> MmlObjectInstance</code>
-- <code title="get /v1/mml-objects/{projectId}/object-instances/{instanceId}">client.objects.objectInstances.<a href="./src/resources/objects/object-instances/object-instances.ts">retrieve</a>(projectId, instanceId) -> MmlObjectInstance</code>
-- <code title="post /v1/mml-objects/{projectId}/object-instances/{instanceId}">client.objects.objectInstances.<a href="./src/resources/objects/object-instances/object-instances.ts">update</a>(projectId, instanceId, { ...params }) -> MmlObjectInstance</code>
-- <code title="get /v1/mml-objects/{projectId}/object-instances/">client.objects.objectInstances.<a href="./src/resources/objects/object-instances/object-instances.ts">list</a>(projectId, { ...params }) -> ObjectInstanceListResponse</code>
-- <code title="delete /v1/mml-objects/{projectId}/object-instances/{instanceId}">client.objects.objectInstances.<a href="./src/resources/objects/object-instances/object-instances.ts">delete</a>(projectId, instanceId) -> void</code>
-- <code title="get /v1/mml-objects/{projectId}/object-instances/{instanceId}/log-access">client.objects.objectInstances.<a href="./src/resources/objects/object-instances/object-instances.ts">logAccess</a>(projectId, instanceId) -> MmlObjectInstanceLogAccess</code>
-- <code title="get /v1/mml-objects/{projectId}/object-instances/{instanceId}/usage">client.objects.objectInstances.<a href="./src/resources/objects/object-instances/object-instances.ts">usage</a>(projectId, instanceId, { ...params }) -> ObjectInstanceUsageResponse</code>
-
-### Quota
-
-Types:
-
-- <code><a href="./src/resources/objects/object-instances/quota.ts">MmlObjectInstanceQuota</a></code>
+- <code title="post /v1/mml-objects/{projectId}/object-instances/">client.objects.objectInstances.<a href="./src/resources/objects/object-instances.ts">create</a>(projectId, { ...params }) -> MMLObjectInstance</code>
+- <code title="get /v1/mml-objects/{projectId}/object-instances/{instanceId}">client.objects.objectInstances.<a href="./src/resources/objects/object-instances.ts">retrieve</a>(projectId, instanceId) -> MMLObjectInstance</code>
+- <code title="post /v1/mml-objects/{projectId}/object-instances/{instanceId}">client.objects.objectInstances.<a href="./src/resources/objects/object-instances.ts">update</a>(projectId, instanceId, { ...params }) -> MMLObjectInstance</code>
+- <code title="get /v1/mml-objects/{projectId}/object-instances/">client.objects.objectInstances.<a href="./src/resources/objects/object-instances.ts">list</a>(projectId, { ...params }) -> ObjectInstanceListResponse</code>
+- <code title="delete /v1/mml-objects/{projectId}/object-instances/{instanceId}">client.objects.objectInstances.<a href="./src/resources/objects/object-instances.ts">delete</a>(projectId, instanceId) -> void</code>
+- <code title="get /v1/mml-objects/{projectId}/object-instances/{instanceId}/log-access">client.objects.objectInstances.<a href="./src/resources/objects/object-instances.ts">logAccess</a>(projectId, instanceId) -> MMLObjectInstanceLogAccess</code>
+- <code title="get /v1/mml-objects/{projectId}/object-instances/{instanceId}/usage">client.objects.objectInstances.<a href="./src/resources/objects/object-instances.ts">usage</a>(projectId, instanceId, { ...params }) -> ObjectInstanceUsageResponse</code>
 
 ## ObjectInstancesQuota
 
@@ -207,15 +201,15 @@ Methods:
 
 Types:
 
-- <code><a href="./src/resources/objects/object-templates/object-templates.ts">MmlObjectTemplate</a></code>
+- <code><a href="./src/resources/objects/object-templates/object-templates.ts">MMLObjectTemplate</a></code>
 
 ### Versions
 
 Types:
 
-- <code><a href="./src/resources/objects/object-templates/versions.ts">MmlObjectTemplateVersion</a></code>
+- <code><a href="./src/resources/objects/object-templates/versions.ts">MMLObjectTemplateVersion</a></code>
 
-# MmlObjects
+# MMLObjects
 
 ## ObjectInstancesUsage
 
@@ -235,9 +229,9 @@ Types:
 
 Methods:
 
-- <code title="post /v1/mml-objects/{projectId}/object-templates/">client.mmlObjects.objectTemplates.<a href="./src/resources/mml-objects/object-templates/object-templates.ts">create</a>(projectId, { ...params }) -> MmlObjectTemplate</code>
-- <code title="get /v1/mml-objects/{projectId}/object-templates/{templateId}">client.mmlObjects.objectTemplates.<a href="./src/resources/mml-objects/object-templates/object-templates.ts">retrieve</a>(projectId, templateId) -> MmlObjectTemplate</code>
-- <code title="post /v1/mml-objects/{projectId}/object-templates/{templateId}">client.mmlObjects.objectTemplates.<a href="./src/resources/mml-objects/object-templates/object-templates.ts">update</a>(projectId, templateId, { ...params }) -> MmlObjectTemplate</code>
+- <code title="post /v1/mml-objects/{projectId}/object-templates/">client.mmlObjects.objectTemplates.<a href="./src/resources/mml-objects/object-templates/object-templates.ts">create</a>(projectId, { ...params }) -> MMLObjectTemplate</code>
+- <code title="get /v1/mml-objects/{projectId}/object-templates/{templateId}">client.mmlObjects.objectTemplates.<a href="./src/resources/mml-objects/object-templates/object-templates.ts">retrieve</a>(projectId, templateId) -> MMLObjectTemplate</code>
+- <code title="post /v1/mml-objects/{projectId}/object-templates/{templateId}">client.mmlObjects.objectTemplates.<a href="./src/resources/mml-objects/object-templates/object-templates.ts">update</a>(projectId, templateId, { ...params }) -> MMLObjectTemplate</code>
 - <code title="get /v1/mml-objects/{projectId}/object-templates/">client.mmlObjects.objectTemplates.<a href="./src/resources/mml-objects/object-templates/object-templates.ts">list</a>(projectId, { ...params }) -> ObjectTemplateListResponse</code>
 
 ### Versions
@@ -248,9 +242,9 @@ Types:
 
 Methods:
 
-- <code title="post /v1/mml-objects/{projectId}/object-templates/{templateId}/versions/">client.mmlObjects.objectTemplates.versions.<a href="./src/resources/mml-objects/object-templates/versions.ts">create</a>(projectId, templateId, { ...params }) -> MmlObjectTemplateVersion</code>
-- <code title="get /v1/mml-objects/{projectId}/object-templates/{templateId}/versions/{versionId}/">client.mmlObjects.objectTemplates.versions.<a href="./src/resources/mml-objects/object-templates/versions.ts">retrieve</a>(projectId, templateId, versionId) -> MmlObjectTemplateVersion</code>
-- <code title="post /v1/mml-objects/{projectId}/object-templates/{templateId}/versions/{versionId}/">client.mmlObjects.objectTemplates.versions.<a href="./src/resources/mml-objects/object-templates/versions.ts">update</a>(projectId, templateId, versionId, { ...params }) -> MmlObjectTemplateVersion</code>
+- <code title="post /v1/mml-objects/{projectId}/object-templates/{templateId}/versions/">client.mmlObjects.objectTemplates.versions.<a href="./src/resources/mml-objects/object-templates/versions.ts">create</a>(projectId, templateId, { ...params }) -> MMLObjectTemplateVersion</code>
+- <code title="get /v1/mml-objects/{projectId}/object-templates/{templateId}/versions/{versionId}/">client.mmlObjects.objectTemplates.versions.<a href="./src/resources/mml-objects/object-templates/versions.ts">retrieve</a>(projectId, templateId, versionId) -> MMLObjectTemplateVersion</code>
+- <code title="post /v1/mml-objects/{projectId}/object-templates/{templateId}/versions/{versionId}/">client.mmlObjects.objectTemplates.versions.<a href="./src/resources/mml-objects/object-templates/versions.ts">update</a>(projectId, templateId, versionId, { ...params }) -> MMLObjectTemplateVersion</code>
 - <code title="get /v1/mml-objects/{projectId}/object-templates/{templateId}/versions/">client.mmlObjects.objectTemplates.versions.<a href="./src/resources/mml-objects/object-templates/versions.ts">list</a>(projectId, templateId, { ...params }) -> VersionListResponse</code>
 
 # Worlds
