@@ -3,7 +3,6 @@
 import { APIResource } from '../../resource';
 import { isRequestOptions } from '../../core';
 import * as Core from '../../core';
-import * as Shared from '../shared';
 
 export class Projects extends APIResource {
   /**
@@ -13,7 +12,7 @@ export class Projects extends APIResource {
     organizationId: string,
     body: ProjectCreateParams,
     options?: Core.RequestOptions,
-  ): Core.APIPromise<Shared.Project> {
+  ): Core.APIPromise<Project> {
     return this._client.post(`/v1/identity/organizations/${organizationId}/projects`, { body, ...options });
   }
 
@@ -38,12 +37,40 @@ export class Projects extends APIResource {
   }
 }
 
+export interface Project {
+  id: string;
+
+  createdAt: string;
+
+  createdBy: Project.UnionMember0 | Project.UnionMember1;
+
+  name: string;
+
+  organizationId: string;
+
+  description?: string;
+}
+
+export namespace Project {
+  export interface UnionMember0 {
+    type: 'user';
+
+    userId: string;
+  }
+
+  export interface UnionMember1 {
+    apiKeyId: string;
+
+    type: 'apiKey';
+  }
+}
+
 export interface ProjectListResponse {
   limit: number;
 
   offset: number;
 
-  projects: Array<Shared.Project>;
+  projects: Array<Project>;
 
   totalResults: number;
 }
@@ -71,6 +98,7 @@ export interface ProjectListParams {
 
 export declare namespace Projects {
   export {
+    type Project as Project,
     type ProjectListResponse as ProjectListResponse,
     type ProjectCreateParams as ProjectCreateParams,
     type ProjectListParams as ProjectListParams,

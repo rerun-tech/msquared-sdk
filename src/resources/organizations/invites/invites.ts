@@ -4,7 +4,13 @@ import { APIResource } from '../../../resource';
 import { isRequestOptions } from '../../../core';
 import * as Core from '../../../core';
 import * as InviteOffersAPI from './invite-offers';
-import { InviteOfferRetrieveParams, InviteOffers, OrganizationInviteOffer } from './invite-offers';
+import {
+  InviteOfferCreateParams,
+  InviteOfferCreateResponse,
+  InviteOfferRetrieveParams,
+  InviteOffers,
+  OrganizationInviteOffer,
+} from './invite-offers';
 
 export class Invites extends APIResource {
   inviteOffers: InviteOffersAPI.InviteOffers = new InviteOffersAPI.InviteOffers(this._client);
@@ -125,6 +131,8 @@ export declare namespace Invites {
   export {
     InviteOffers as InviteOffers,
     type OrganizationInviteOffer as OrganizationInviteOffer,
+    type InviteOfferCreateResponse as InviteOfferCreateResponse,
+    type InviteOfferCreateParams as InviteOfferCreateParams,
     type InviteOfferRetrieveParams as InviteOfferRetrieveParams,
   };
 }
