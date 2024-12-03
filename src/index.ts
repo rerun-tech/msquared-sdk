@@ -19,6 +19,11 @@ import { World, Worlds } from './resources/worlds/worlds';
 
 export interface ClientOptions {
   /**
+   * Defaults to process.env['API_KEY'].
+   */
+  authToken?: string | undefined;
+
+  /**
    * Override the default base URL for the API, e.g., "https://api.example.com/v2/"
    *
    * Defaults to process.env['MSQUARED_BASE_URL'].
@@ -79,11 +84,14 @@ export interface ClientOptions {
  * API Client for interfacing with the MSquared API.
  */
 export class MSquared extends Core.APIClient {
+  authToken: string;
+
   private _options: ClientOptions;
 
   /**
    * API Client for interfacing with the MSquared API.
    *
+   * @param {string | undefined} [opts.authToken=process.env['API_KEY'] ?? undefined]
    * @param {string} [opts.baseURL=process.env['MSQUARED_BASE_URL'] ?? https://api.mserve.io] - Override the default base URL for the API.
    * @param {number} [opts.timeout=1 minute] - The maximum amount of time (in milliseconds) the client will wait for a response before timing out.
    * @param {number} [opts.httpAgent] - An HTTP agent used to manage HTTP(s) connections.
@@ -92,8 +100,19 @@ export class MSquared extends Core.APIClient {
    * @param {Core.Headers} opts.defaultHeaders - Default headers to include with every request to the API.
    * @param {Core.DefaultQuery} opts.defaultQuery - Default query parameters to include with every request to the API.
    */
-  constructor({ baseURL = Core.readEnv('MSQUARED_BASE_URL'), ...opts }: ClientOptions = {}) {
+  constructor({
+    baseURL = Core.readEnv('MSQUARED_BASE_URL'),
+    authToken = Core.readEnv('API_KEY'),
+    ...opts
+  }: ClientOptions = {}) {
+    if (authToken === undefined) {
+      throw new Errors.MSquaredError(
+        "The API_KEY environment variable is missing or empty; either provide it, or instantiate the MSquared client with an authToken option, like new MSquared({ authToken: 'My Auth Token' }).",
+      );
+    }
+
     const options: ClientOptions = {
+      authToken,
       ...opts,
       baseURL: baseURL || `https://api.mserve.io`,
     };
@@ -107,6 +126,8 @@ export class MSquared extends Core.APIClient {
     });
 
     this._options = options;
+
+    this.authToken = authToken;
   }
 
   organizations: API.Organizations = new API.Organizations(this);
