@@ -96,14 +96,16 @@ export namespace World {
     allowCustomAvatars?: boolean;
 
     availableAvatars?: Array<
-      AvatarConfiguration.UnionMember0 | AvatarConfiguration.UnionMember1 | AvatarConfiguration.UnionMember2
+      | AvatarConfiguration.MeshFileURL
+      | AvatarConfiguration.MMLCharacterString
+      | AvatarConfiguration.MMLCharacterURL
     >;
 
     customAvatarWebhookUrl?: string;
   }
 
   export namespace AvatarConfiguration {
-    export interface UnionMember0 {
+    export interface MeshFileURL {
       meshFileUrl: string;
 
       isDefaultAvatar?: boolean;
@@ -117,7 +119,7 @@ export namespace World {
       thumbnailUrl?: string;
     }
 
-    export interface UnionMember1 {
+    export interface MMLCharacterString {
       mmlCharacterString: string;
 
       isDefaultAvatar?: boolean;
@@ -131,7 +133,7 @@ export namespace World {
       thumbnailUrl?: string;
     }
 
-    export interface UnionMember2 {
+    export interface MMLCharacterURL {
       mmlCharacterUrl: string;
 
       isDefaultAvatar?: boolean;
