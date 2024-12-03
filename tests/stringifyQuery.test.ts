@@ -1,8 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { Msquared } from 'msquared';
+import { MSquared } from 'msquared';
 
-const { stringifyQuery } = Msquared.prototype as any;
+const { stringifyQuery } = MSquared.prototype as any;
 
 describe(stringifyQuery, () => {
   for (const [input, expected] of [

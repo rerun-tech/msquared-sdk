@@ -1,9 +1,9 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import Msquared from 'msquared';
+import MSquared from 'msquared';
 import { Response } from 'node-fetch';
 
-const client = new Msquared({ baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010' });
+const client = new MSquared({ baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010' });
 
 describe('resource versions', () => {
   test('create: only required params', async () => {
@@ -51,7 +51,7 @@ describe('resource versions', () => {
       client.mmlObjects.objectTemplates.versions.retrieve('projectId', 'templateId', 'versionId', {
         path: '/_stainless_unknown_path',
       }),
-    ).rejects.toThrow(Msquared.NotFoundError);
+    ).rejects.toThrow(MSquared.NotFoundError);
   });
 
   test('update', async () => {
@@ -87,7 +87,7 @@ describe('resource versions', () => {
       client.mmlObjects.objectTemplates.versions.list('projectId', 'templateId', {
         path: '/_stainless_unknown_path',
       }),
-    ).rejects.toThrow(Msquared.NotFoundError);
+    ).rejects.toThrow(MSquared.NotFoundError);
   });
 
   test('list: request options and params are passed correctly', async () => {
@@ -99,6 +99,6 @@ describe('resource versions', () => {
         { limit: 0, offset: 0, search: 'search' },
         { path: '/_stainless_unknown_path' },
       ),
-    ).rejects.toThrow(Msquared.NotFoundError);
+    ).rejects.toThrow(MSquared.NotFoundError);
   });
 });

@@ -79,13 +79,13 @@ export interface ClientOptions {
 }
 
 /**
- * API Client for interfacing with the Msquared API.
+ * API Client for interfacing with the MSquared API.
  */
-export class Msquared extends Core.APIClient {
+export class MSquared extends Core.APIClient {
   private _options: ClientOptions;
 
   /**
-   * API Client for interfacing with the Msquared API.
+   * API Client for interfacing with the MSquared API.
    *
    * @param {string} [opts.baseURL=process.env['MSQUARED_BASE_URL'] ?? https://api.mserve.io] - Override the default base URL for the API.
    * @param {number} [opts.timeout=1 minute] - The maximum amount of time (in milliseconds) the client will wait for a response before timing out.
@@ -131,10 +131,10 @@ export class Msquared extends Core.APIClient {
     };
   }
 
-  static Msquared = this;
+  static MSquared = this;
   static DEFAULT_TIMEOUT = 60000; // 1 minute
 
-  static MsquaredError = Errors.MsquaredError;
+  static MSquaredError = Errors.MSquaredError;
   static APIError = Errors.APIError;
   static APIConnectionError = Errors.APIConnectionError;
   static APIConnectionTimeoutError = Errors.APIConnectionTimeoutError;
@@ -152,14 +152,14 @@ export class Msquared extends Core.APIClient {
   static fileFromPath = Uploads.fileFromPath;
 }
 
-Msquared.Organizations = Organizations;
-Msquared.Identity = Identity;
-Msquared.Projects = Projects;
-Msquared.ProfileResource = ProfileResource;
-Msquared.Objects = Objects;
-Msquared.MmlObjects = MmlObjects;
-Msquared.Worlds = Worlds;
-export declare namespace Msquared {
+MSquared.Organizations = Organizations;
+MSquared.Identity = Identity;
+MSquared.Projects = Projects;
+MSquared.ProfileResource = ProfileResource;
+MSquared.Objects = Objects;
+MSquared.MmlObjects = MmlObjects;
+MSquared.Worlds = Worlds;
+export declare namespace MSquared {
   export type RequestOptions = Core.RequestOptions;
 
   export {
@@ -189,7 +189,7 @@ export declare namespace Msquared {
 
 export { toFile, fileFromPath } from './uploads';
 export {
-  MsquaredError,
+  MSquaredError,
   APIError,
   APIConnectionError,
   APIConnectionTimeoutError,
@@ -204,4 +204,4 @@ export {
   UnprocessableEntityError,
 } from './error';
 
-export default Msquared;
+export default MSquared;

@@ -1,9 +1,9 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import Msquared from 'msquared';
+import MSquared from 'msquared';
 import { Response } from 'node-fetch';
 
-const client = new Msquared({ baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010' });
+const client = new MSquared({ baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010' });
 
 describe('resource projects', () => {
   test('retrieve', async () => {
@@ -21,7 +21,7 @@ describe('resource projects', () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
       client.identity.projects.retrieve('projectId', { path: '/_stainless_unknown_path' }),
-    ).rejects.toThrow(Msquared.NotFoundError);
+    ).rejects.toThrow(MSquared.NotFoundError);
   });
 
   test('list', async () => {
@@ -38,7 +38,7 @@ describe('resource projects', () => {
   test('list: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(client.identity.projects.list({ path: '/_stainless_unknown_path' })).rejects.toThrow(
-      Msquared.NotFoundError,
+      MSquared.NotFoundError,
     );
   });
 
@@ -46,6 +46,6 @@ describe('resource projects', () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
       client.identity.projects.list({ limit: 0, offset: 0 }, { path: '/_stainless_unknown_path' }),
-    ).rejects.toThrow(Msquared.NotFoundError);
+    ).rejects.toThrow(MSquared.NotFoundError);
   });
 });

@@ -1,9 +1,9 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import Msquared from 'msquared';
+import MSquared from 'msquared';
 import { Response } from 'node-fetch';
 
-const client = new Msquared({ baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010' });
+const client = new MSquared({ baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010' });
 
 describe('resource objectTemplates', () => {
   test('create: only required params', async () => {
@@ -41,7 +41,7 @@ describe('resource objectTemplates', () => {
       client.mmlObjects.objectTemplates.retrieve('projectId', 'templateId', {
         path: '/_stainless_unknown_path',
       }),
-    ).rejects.toThrow(Msquared.NotFoundError);
+    ).rejects.toThrow(MSquared.NotFoundError);
   });
 
   test('update', async () => {
@@ -70,7 +70,7 @@ describe('resource objectTemplates', () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
       client.mmlObjects.objectTemplates.list('projectId', { path: '/_stainless_unknown_path' }),
-    ).rejects.toThrow(Msquared.NotFoundError);
+    ).rejects.toThrow(MSquared.NotFoundError);
   });
 
   test('list: request options and params are passed correctly', async () => {
@@ -81,6 +81,6 @@ describe('resource objectTemplates', () => {
         { limit: 0, offset: 0, search: 'search' },
         { path: '/_stainless_unknown_path' },
       ),
-    ).rejects.toThrow(Msquared.NotFoundError);
+    ).rejects.toThrow(MSquared.NotFoundError);
   });
 });

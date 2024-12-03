@@ -2,9 +2,9 @@
 
 import { castToError, Headers } from './core';
 
-export class MsquaredError extends Error {}
+export class MSquaredError extends Error {}
 
-export class APIError extends MsquaredError {
+export class APIError extends MSquaredError {
   readonly status: number | undefined;
   readonly headers: Headers | undefined;
   readonly error: Object | undefined;
