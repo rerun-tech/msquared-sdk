@@ -178,14 +178,14 @@ describe('instantiate client', () => {
 
   test('with environment variable arguments', () => {
     // set options via env var
-    process.env['API_KEY'] = 'My Auth Token';
+    process.env['MSQUARED_API_KEY'] = 'My Auth Token';
     const client = new MSquared();
     expect(client.authToken).toBe('My Auth Token');
   });
 
   test('with overriden environment variable arguments', () => {
     // set options via env var
-    process.env['API_KEY'] = 'another My Auth Token';
+    process.env['MSQUARED_API_KEY'] = 'another My Auth Token';
     const client = new MSquared({ authToken: 'My Auth Token' });
     expect(client.authToken).toBe('My Auth Token');
   });
