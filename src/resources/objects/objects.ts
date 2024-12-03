@@ -13,8 +13,11 @@ import {
   ObjectInstanceUsageResponse,
   ObjectInstances,
 } from './object-instances';
-import * as ObjectInstancesQuotaAPI from './object-instances-quota';
-import { ObjectInstancesQuota, ObjectInstancesQuotaListResponse } from './object-instances-quota';
+import * as ObjectInstancesQuotaAPI from './object-instances-quota/object-instances-quota';
+import {
+  ObjectInstancesQuota,
+  ObjectInstancesQuotaListResponse,
+} from './object-instances-quota/object-instances-quota';
 import * as ObjectTemplatesAPI from './object-templates/object-templates';
 import { MMLObjectTemplate, ObjectTemplates } from './object-templates/object-templates';
 

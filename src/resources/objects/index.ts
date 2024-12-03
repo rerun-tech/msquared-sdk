@@ -11,6 +11,6 @@ export {
   type ObjectInstanceListParams,
   type ObjectInstanceUsageParams,
 } from './object-instances';
-export { ObjectInstancesQuota, type ObjectInstancesQuotaListResponse } from './object-instances-quota';
+export { ObjectInstancesQuota, type ObjectInstancesQuotaListResponse } from './object-instances-quota/index';
 export { ObjectTemplates, type MMLObjectTemplate } from './object-templates/index';
 export { Objects } from './objects';

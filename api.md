@@ -191,11 +191,17 @@ Methods:
 
 Types:
 
-- <code><a href="./src/resources/objects/object-instances-quota.ts">ObjectInstancesQuotaListResponse</a></code>
+- <code><a href="./src/resources/objects/object-instances-quota/object-instances-quota.ts">ObjectInstancesQuotaListResponse</a></code>
 
 Methods:
 
-- <code title="get /v1/mml-objects/{projectId}/object-instances-quota">client.objects.objectInstancesQuota.<a href="./src/resources/objects/object-instances-quota.ts">list</a>(projectId) -> ObjectInstancesQuotaListResponse</code>
+- <code title="get /v1/mml-objects/{projectId}/object-instances-quota">client.objects.objectInstancesQuota.<a href="./src/resources/objects/object-instances-quota/object-instances-quota.ts">list</a>(projectId) -> ObjectInstancesQuotaListResponse</code>
+
+### Quota
+
+Types:
+
+- <code><a href="./src/resources/objects/object-instances-quota/quota.ts">MMLObjectInstanceQuota</a></code>
 
 ## ObjectTemplates
 
