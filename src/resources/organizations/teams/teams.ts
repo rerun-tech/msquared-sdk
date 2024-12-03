@@ -4,7 +4,14 @@ import { APIResource } from '../../../resource';
 import { isRequestOptions } from '../../../core';
 import * as Core from '../../../core';
 import * as MembersAPI from './members';
-import { MemberCreateParams, MemberListParams, MemberListResponse, Members, TeamMember } from './members';
+import {
+  MemberCreateParams,
+  MemberListParams,
+  MemberListResponse,
+  MemberUpdateParams,
+  Members,
+  TeamMember,
+} from './members';
 import * as PermissionsAPI from './permissions';
 import {
   PermissionCreateParams,
@@ -156,6 +163,7 @@ export declare namespace Teams {
     type TeamMember as TeamMember,
     type MemberListResponse as MemberListResponse,
     type MemberCreateParams as MemberCreateParams,
+    type MemberUpdateParams as MemberUpdateParams,
     type MemberListParams as MemberListParams,
   };
 

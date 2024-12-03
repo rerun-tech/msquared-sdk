@@ -6,13 +6,28 @@ import * as Core from '../../../core';
 
 export class Members extends APIResource {
   /**
-   * Update a team member
+   * Create a team member
    */
   create(
     organizationId: string,
     teamId: string,
-    memberId: string,
     body: MemberCreateParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<TeamMember> {
+    return this._client.post(`/v1/identity/organizations/${organizationId}/teams/${teamId}/members`, {
+      body,
+      ...options,
+    });
+  }
+
+  /**
+   * Update a team member
+   */
+  update(
+    organizationId: string,
+    teamId: string,
+    memberId: string,
+    body: MemberUpdateParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<TeamMember> {
     return this._client.post(
@@ -102,6 +117,12 @@ export interface MemberListResponse {
 
 export interface MemberCreateParams {
   role: 'admin' | 'member';
+
+  userId: string;
+}
+
+export interface MemberUpdateParams {
+  role: 'admin' | 'member';
 }
 
 export interface MemberListParams {
@@ -121,6 +142,7 @@ export declare namespace Members {
     type TeamMember as TeamMember,
     type MemberListResponse as MemberListResponse,
     type MemberCreateParams as MemberCreateParams,
+    type MemberUpdateParams as MemberUpdateParams,
     type MemberListParams as MemberListParams,
   };
 }

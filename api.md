@@ -132,7 +132,8 @@ Types:
 
 Methods:
 
-- <code title="post /v1/identity/organizations/{organizationId}/teams/{teamId}/members/{memberId}">client.organizations.teams.members.<a href="./src/resources/organizations/teams/members.ts">create</a>(organizationId, teamId, memberId, { ...params }) -> TeamMember</code>
+- <code title="post /v1/identity/organizations/{organizationId}/teams/{teamId}/members">client.organizations.teams.members.<a href="./src/resources/organizations/teams/members.ts">create</a>(organizationId, teamId, { ...params }) -> TeamMember</code>
+- <code title="post /v1/identity/organizations/{organizationId}/teams/{teamId}/members/{memberId}">client.organizations.teams.members.<a href="./src/resources/organizations/teams/members.ts">update</a>(organizationId, teamId, memberId, { ...params }) -> TeamMember</code>
 - <code title="get /v1/identity/organizations/{organizationId}/teams/{teamId}/members">client.organizations.teams.members.<a href="./src/resources/organizations/teams/members.ts">list</a>(organizationId, teamId, { ...params }) -> MemberListResponse</code>
 - <code title="delete /v1/identity/organizations/{organizationId}/teams/{teamId}/members/{memberId}">client.organizations.teams.members.<a href="./src/resources/organizations/teams/members.ts">delete</a>(organizationId, teamId, memberId) -> void</code>
 

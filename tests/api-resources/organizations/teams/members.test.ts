@@ -10,7 +10,28 @@ const client = new MSquared({
 
 describe('resource members', () => {
   test('create: only required params', async () => {
-    const responsePromise = client.organizations.teams.members.create(
+    const responsePromise = client.organizations.teams.members.create('organizationId', 'teamId', {
+      role: 'admin',
+      userId: 'userId',
+    });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  test('create: required and optional params', async () => {
+    const response = await client.organizations.teams.members.create('organizationId', 'teamId', {
+      role: 'admin',
+      userId: 'userId',
+    });
+  });
+
+  test('update: only required params', async () => {
+    const responsePromise = client.organizations.teams.members.update(
       'organizationId',
       'teamId',
       'memberId',
@@ -25,8 +46,8 @@ describe('resource members', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  test('create: required and optional params', async () => {
-    const response = await client.organizations.teams.members.create('organizationId', 'teamId', 'memberId', {
+  test('update: required and optional params', async () => {
+    const response = await client.organizations.teams.members.update('organizationId', 'teamId', 'memberId', {
       role: 'admin',
     });
   });
