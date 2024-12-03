@@ -1,12 +1,10 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from '../../resource';
+import * as SubresourcesAPI from './subresources';
+import { Subresources, WorldQuota } from './subresources';
 import * as WebWorldInstancesQuotaAPI from './web-world-instances-quota';
-import {
-  WebWorldInstancesQuota,
-  WebWorldInstancesQuotaListResponse,
-  WorldQuota,
-} from './web-world-instances-quota';
+import { WebWorldInstancesQuota, WebWorldInstancesQuotaListResponse } from './web-world-instances-quota';
 import * as WebWorldInstancesUsageAPI from './web-world-instances-usage';
 import {
   WebWorldInstancesUsage,
@@ -30,11 +28,13 @@ export class Worlds extends APIResource {
     new WebWorldInstancesQuotaAPI.WebWorldInstancesQuota(this._client);
   webWorldInstancesUsage: WebWorldInstancesUsageAPI.WebWorldInstancesUsage =
     new WebWorldInstancesUsageAPI.WebWorldInstancesUsage(this._client);
+  subresources: SubresourcesAPI.Subresources = new SubresourcesAPI.Subresources(this._client);
 }
 
 Worlds.WebWorldInstances = WebWorldInstances;
 Worlds.WebWorldInstancesQuota = WebWorldInstancesQuota;
 Worlds.WebWorldInstancesUsage = WebWorldInstancesUsage;
+Worlds.Subresources = Subresources;
 
 export declare namespace Worlds {
   export {
@@ -47,7 +47,6 @@ export declare namespace Worlds {
 
   export {
     WebWorldInstancesQuota as WebWorldInstancesQuota,
-    type WorldQuota as WorldQuota,
     type WebWorldInstancesQuotaListResponse as WebWorldInstancesQuotaListResponse,
   };
 
@@ -56,4 +55,6 @@ export declare namespace Worlds {
     type WebWorldInstancesUsageListResponse as WebWorldInstancesUsageListResponse,
     type WebWorldInstancesUsageListParams as WebWorldInstancesUsageListParams,
   };
+
+  export { Subresources as Subresources, type WorldQuota as WorldQuota };
 }
