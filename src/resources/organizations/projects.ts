@@ -42,7 +42,7 @@ export interface Project {
 
   createdAt: string;
 
-  createdBy: Project.UnionMember0 | Project.UnionMember1;
+  createdBy: Project.UserID | Project.APIKeyID;
 
   name: string;
 
@@ -52,13 +52,13 @@ export interface Project {
 }
 
 export namespace Project {
-  export interface UnionMember0 {
+  export interface UserID {
     type: 'user';
 
     userId: string;
   }
 
-  export interface UnionMember1 {
+  export interface APIKeyID {
     apiKeyId: string;
 
     type: 'apiKey';

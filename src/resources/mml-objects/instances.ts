@@ -107,7 +107,7 @@ export interface MMLObjectInstance {
 
   createdAt: string;
 
-  createdBy: MMLObjectInstance.UnionMember0 | MMLObjectInstance.UnionMember1;
+  createdBy: MMLObjectInstance.UserID | MMLObjectInstance.APIKeyID;
 
   enabled: boolean;
 
@@ -123,13 +123,13 @@ export interface MMLObjectInstance {
 }
 
 export namespace MMLObjectInstance {
-  export interface UnionMember0 {
+  export interface UserID {
     type: 'user';
 
     userId: string;
   }
 
-  export interface UnionMember1 {
+  export interface APIKeyID {
     apiKeyId: string;
 
     type: 'apiKey';

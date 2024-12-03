@@ -40,7 +40,7 @@ export interface World {
 
   createdAt: string;
 
-  createdBy: World.UnionMember0 | World.UnionMember1;
+  createdBy: World.UserID | World.APIKeyID;
 
   environmentConfiguration: World.EnvironmentConfiguration;
 
@@ -150,13 +150,13 @@ export namespace World {
     enabled: boolean;
   }
 
-  export interface UnionMember0 {
+  export interface UserID {
     type: 'user';
 
     userId: string;
   }
 
-  export interface UnionMember1 {
+  export interface APIKeyID {
     apiKeyId: string;
 
     type: 'apiKey';

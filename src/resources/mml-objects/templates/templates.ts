@@ -78,7 +78,7 @@ export interface MMLObjectTemplate {
 
   createdAt: string;
 
-  createdBy: MMLObjectTemplate.UnionMember0 | MMLObjectTemplate.UnionMember1;
+  createdBy: MMLObjectTemplate.UserID | MMLObjectTemplate.APIKeyID;
 
   name: string;
 
@@ -88,13 +88,13 @@ export interface MMLObjectTemplate {
 }
 
 export namespace MMLObjectTemplate {
-  export interface UnionMember0 {
+  export interface UserID {
     type: 'user';
 
     userId: string;
   }
 
-  export interface UnionMember1 {
+  export interface APIKeyID {
     apiKeyId: string;
 
     type: 'apiKey';
@@ -106,7 +106,7 @@ export interface MMLObjectTemplateVersion {
 
   createdAt: string;
 
-  createdBy: MMLObjectTemplateVersion.UnionMember0 | MMLObjectTemplateVersion.UnionMember1;
+  createdBy: MMLObjectTemplateVersion.UserID | MMLObjectTemplateVersion.APIKeyID;
 
   source: string;
 
@@ -116,13 +116,13 @@ export interface MMLObjectTemplateVersion {
 }
 
 export namespace MMLObjectTemplateVersion {
-  export interface UnionMember0 {
+  export interface UserID {
     type: 'user';
 
     userId: string;
   }
 
-  export interface UnionMember1 {
+  export interface APIKeyID {
     apiKeyId: string;
 
     type: 'apiKey';

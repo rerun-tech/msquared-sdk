@@ -40,7 +40,7 @@ export interface OrganizationInviteOffer {
 
   createdAt: string;
 
-  createdBy: OrganizationInviteOffer.UnionMember0 | OrganizationInviteOffer.UnionMember1;
+  createdBy: OrganizationInviteOffer.UserID | OrganizationInviteOffer.APIKeyID;
 
   email: string;
 
@@ -52,13 +52,13 @@ export interface OrganizationInviteOffer {
 }
 
 export namespace OrganizationInviteOffer {
-  export interface UnionMember0 {
+  export interface UserID {
     type: 'user';
 
     userId: string;
   }
 
-  export interface UnionMember1 {
+  export interface APIKeyID {
     apiKeyId: string;
 
     type: 'apiKey';
