@@ -25,7 +25,9 @@ The full API of this library can be found in [api.md](api.md).
 ```js
 import MSquared from 'msquared';
 
-const client = new MSquared();
+const client = new MSquared({
+  authToken: process.env['API_KEY'], // This is the default and can be omitted
+});
 
 async function main() {
   const world = await client.worlds.instances.create('your-project', { name: 'your-web-world' });
@@ -44,7 +46,9 @@ This library includes TypeScript definitions for all request params and response
 ```ts
 import MSquared from 'msquared';
 
-const client = new MSquared();
+const client = new MSquared({
+  authToken: process.env['API_KEY'], // This is the default and can be omitted
+});
 
 async function main() {
   const params: MSquared.Worlds.InstanceCreateParams = { name: 'name' };
@@ -105,7 +109,6 @@ You can use the `maxRetries` option to configure or disable this:
 // Configure the default for all requests:
 const client = new MSquared({
   maxRetries: 0, // default is 2
-  authToken: 'My Auth Token',
 });
 
 // Or, configure per-request:
@@ -123,7 +126,6 @@ Requests time out after 1 minute by default. You can configure this with a `time
 // Configure the default for all requests:
 const client = new MSquared({
   timeout: 20 * 1000, // 20 seconds (default is 1 minute)
-  authToken: 'My Auth Token',
 });
 
 // Override per-request:
@@ -257,7 +259,6 @@ import { HttpsProxyAgent } from 'https-proxy-agent';
 // Configure the default for all requests:
 const client = new MSquared({
   httpAgent: new HttpsProxyAgent(process.env.PROXY_URL),
-  authToken: 'My Auth Token',
 });
 
 // Override per-request:
