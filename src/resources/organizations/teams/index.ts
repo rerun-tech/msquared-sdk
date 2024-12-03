@@ -5,6 +5,7 @@ export {
   type TeamMember,
   type MemberListResponse,
   type MemberCreateParams,
+  type MemberUpdateParams,
   type MemberListParams,
 } from './members';
 export {
