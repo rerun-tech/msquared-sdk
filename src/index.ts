@@ -145,6 +145,10 @@ export class MSquared extends Core.APIClient {
     };
   }
 
+  protected override authHeaders(opts: Core.FinalRequestOptions): Core.Headers {
+    return { Authorization: `Bearer ${this.authToken}` };
+  }
+
   static MSquared = this;
   static DEFAULT_TIMEOUT = 60000; // 1 minute
 
