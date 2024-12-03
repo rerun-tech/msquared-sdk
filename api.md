@@ -255,10 +255,6 @@ Methods:
 
 # Worlds
 
-Types:
-
-- <code><a href="./src/resources/worlds/worlds.ts">WorldQuota</a></code>
-
 ## WebWorldInstances
 
 Types:
@@ -287,6 +283,7 @@ Methods:
 
 Types:
 
+- <code><a href="./src/resources/worlds/web-world-instances-quota.ts">WorldQuota</a></code>
 - <code><a href="./src/resources/worlds/web-world-instances-quota.ts">WebWorldInstancesQuotaListResponse</a></code>
 
 Methods:

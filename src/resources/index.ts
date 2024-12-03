@@ -14,4 +14,4 @@ export {
 } from './organizations/organizations';
 export { ProfileResource, type Profile } from './profile';
 export { Projects, type ProjectCreateParams } from './projects';
-export { Worlds, type WorldQuota } from './worlds/worlds';
+export { Worlds } from './worlds/worlds';

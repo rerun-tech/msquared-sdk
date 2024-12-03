@@ -2,7 +2,11 @@
 
 import { APIResource } from '../../resource';
 import * as WebWorldInstancesQuotaAPI from './web-world-instances-quota';
-import { WebWorldInstancesQuota, WebWorldInstancesQuotaListResponse } from './web-world-instances-quota';
+import {
+  WebWorldInstancesQuota,
+  WebWorldInstancesQuotaListResponse,
+  WorldQuota,
+} from './web-world-instances-quota';
 import * as WebWorldInstancesUsageAPI from './web-world-instances-usage';
 import {
   WebWorldInstancesUsage,
@@ -28,19 +32,11 @@ export class Worlds extends APIResource {
     new WebWorldInstancesUsageAPI.WebWorldInstancesUsage(this._client);
 }
 
-export interface WorldQuota {
-  current: number;
-
-  limit: number;
-}
-
 Worlds.WebWorldInstances = WebWorldInstances;
 Worlds.WebWorldInstancesQuota = WebWorldInstancesQuota;
 Worlds.WebWorldInstancesUsage = WebWorldInstancesUsage;
 
 export declare namespace Worlds {
-  export { type WorldQuota as WorldQuota };
-
   export {
     WebWorldInstances as WebWorldInstances,
     type WebWorldInstanceListResponse as WebWorldInstanceListResponse,
@@ -51,6 +47,7 @@ export declare namespace Worlds {
 
   export {
     WebWorldInstancesQuota as WebWorldInstancesQuota,
+    type WorldQuota as WorldQuota,
     type WebWorldInstancesQuotaListResponse as WebWorldInstancesQuotaListResponse,
   };
 
