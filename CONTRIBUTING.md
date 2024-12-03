@@ -42,15 +42,15 @@ If you’d like to use the repository from source, you can either install from g
 To install via git:
 
 ```sh
-$ npm install git+ssh://git@github.com:stainless-sdks/msquared-node.git
+$ npm install git+ssh://git@github.com:rerun-tech/msquared-sdk.git
 ```
 
 Alternatively, to link a local copy of the repo:
 
 ```sh
 # Clone
-$ git clone https://www.github.com/stainless-sdks/msquared-node
-$ cd msquared-node
+$ git clone https://www.github.com/rerun-tech/msquared-sdk
+$ cd msquared-sdk
 
 # With yarn
 $ yarn link
