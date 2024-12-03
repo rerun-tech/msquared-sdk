@@ -2,6 +2,7 @@
 
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
+import * as SubresourcesAPI from './subresources';
 
 export class WebWorldInstancesQuota extends APIResource {
   /**
@@ -15,19 +16,10 @@ export class WebWorldInstancesQuota extends APIResource {
   }
 }
 
-export interface WorldQuota {
-  current: number;
-
-  limit: number;
-}
-
 export interface WebWorldInstancesQuotaListResponse {
-  quota: WorldQuota;
+  quota: SubresourcesAPI.WorldQuota;
 }
 
 export declare namespace WebWorldInstancesQuota {
-  export {
-    type WorldQuota as WorldQuota,
-    type WebWorldInstancesQuotaListResponse as WebWorldInstancesQuotaListResponse,
-  };
+  export { type WebWorldInstancesQuotaListResponse as WebWorldInstancesQuotaListResponse };
 }

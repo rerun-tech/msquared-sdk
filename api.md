@@ -283,7 +283,6 @@ Methods:
 
 Types:
 
-- <code><a href="./src/resources/worlds/web-world-instances-quota.ts">WorldQuota</a></code>
 - <code><a href="./src/resources/worlds/web-world-instances-quota.ts">WebWorldInstancesQuotaListResponse</a></code>
 
 Methods:
@@ -299,3 +298,9 @@ Types:
 Methods:
 
 - <code title="get /v1/worlds/{projectId}/web-world-instances-usage">client.worlds.webWorldInstancesUsage.<a href="./src/resources/worlds/web-world-instances-usage.ts">list</a>(projectId, { ...params }) -> WebWorldInstancesUsageListResponse</code>
+
+## Subresources
+
+Types:
+
+- <code><a href="./src/resources/worlds/subresources.ts">WorldQuota</a></code>
