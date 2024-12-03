@@ -1,9 +1,9 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import Msquared from 'msquared';
+import MSquared from 'msquared';
 import { Response } from 'node-fetch';
 
-const client = new Msquared({ baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010' });
+const client = new MSquared({ baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010' });
 
 describe('resource permissions', () => {
   test('create: only required params', async () => {
@@ -46,7 +46,7 @@ describe('resource permissions', () => {
       client.identity.organizations.teams.permissions.list('organizationId', 'teamId', {
         path: '/_stainless_unknown_path',
       }),
-    ).rejects.toThrow(Msquared.NotFoundError);
+    ).rejects.toThrow(MSquared.NotFoundError);
   });
 
   test('list: request options and params are passed correctly', async () => {
@@ -58,7 +58,7 @@ describe('resource permissions', () => {
         { limit: 0, offset: 0 },
         { path: '/_stainless_unknown_path' },
       ),
-    ).rejects.toThrow(Msquared.NotFoundError);
+    ).rejects.toThrow(MSquared.NotFoundError);
   });
 
   test('delete', async () => {
@@ -82,6 +82,6 @@ describe('resource permissions', () => {
       client.identity.organizations.teams.permissions.delete('organizationId', 'teamId', 'permissionId', {
         path: '/_stainless_unknown_path',
       }),
-    ).rejects.toThrow(Msquared.NotFoundError);
+    ).rejects.toThrow(MSquared.NotFoundError);
   });
 });

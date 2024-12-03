@@ -1,11 +1,11 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import type { Msquared } from './index';
+import type { MSquared } from './index';
 
 export class APIResource {
-  protected _client: Msquared;
+  protected _client: MSquared;
 
-  constructor(client: Msquared) {
+  constructor(client: MSquared) {
     this._client = client;
   }
 }
