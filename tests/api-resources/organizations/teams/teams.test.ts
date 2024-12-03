@@ -3,7 +3,10 @@
 import MSquared from 'msquared';
 import { Response } from 'node-fetch';
 
-const client = new MSquared({ baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010' });
+const client = new MSquared({
+  authToken: 'My Auth Token',
+  baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
+});
 
 describe('resource teams', () => {
   test('create: only required params', async () => {
