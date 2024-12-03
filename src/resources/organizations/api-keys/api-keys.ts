@@ -97,17 +97,17 @@ export namespace APIKeyCreateResponse {
 
     name: string;
 
-    createdBy?: APIKey.UnionMember0 | APIKey.UnionMember1;
+    createdBy?: APIKey.UserID | APIKey.APIKeyID;
   }
 
   export namespace APIKey {
-    export interface UnionMember0 {
+    export interface UserID {
       type: 'user';
 
       userId: string;
     }
 
-    export interface UnionMember1 {
+    export interface APIKeyID {
       apiKeyId: string;
 
       type: 'apiKey';
@@ -122,17 +122,17 @@ export interface APIKeyRetrieveResponse {
 
   name: string;
 
-  createdBy?: APIKeyRetrieveResponse.UnionMember0 | APIKeyRetrieveResponse.UnionMember1;
+  createdBy?: APIKeyRetrieveResponse.UserID | APIKeyRetrieveResponse.APIKeyID;
 }
 
 export namespace APIKeyRetrieveResponse {
-  export interface UnionMember0 {
+  export interface UserID {
     type: 'user';
 
     userId: string;
   }
 
-  export interface UnionMember1 {
+  export interface APIKeyID {
     apiKeyId: string;
 
     type: 'apiKey';
@@ -146,17 +146,17 @@ export interface APIKeyUpdateResponse {
 
   name: string;
 
-  createdBy?: APIKeyUpdateResponse.UnionMember0 | APIKeyUpdateResponse.UnionMember1;
+  createdBy?: APIKeyUpdateResponse.UserID | APIKeyUpdateResponse.APIKeyID;
 }
 
 export namespace APIKeyUpdateResponse {
-  export interface UnionMember0 {
+  export interface UserID {
     type: 'user';
 
     userId: string;
   }
 
-  export interface UnionMember1 {
+  export interface APIKeyID {
     apiKeyId: string;
 
     type: 'apiKey';
@@ -181,17 +181,17 @@ export namespace APIKeyListResponse {
 
     name: string;
 
-    createdBy?: APIKey.UnionMember0 | APIKey.UnionMember1;
+    createdBy?: APIKey.UserID | APIKey.APIKeyID;
   }
 
   export namespace APIKey {
-    export interface UnionMember0 {
+    export interface UserID {
       type: 'user';
 
       userId: string;
     }
 
-    export interface UnionMember1 {
+    export interface APIKeyID {
       apiKeyId: string;
 
       type: 'apiKey';

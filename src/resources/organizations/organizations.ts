@@ -94,7 +94,7 @@ export class Organizations extends APIResource {
 export interface Organization {
   id: string;
 
-  createdBy: Organization.UnionMember0 | Organization.UnionMember1;
+  createdBy: Organization.UserID | Organization.APIKeyID;
 
   name: string;
 
@@ -104,13 +104,13 @@ export interface Organization {
 }
 
 export namespace Organization {
-  export interface UnionMember0 {
+  export interface UserID {
     type: 'user';
 
     userId: string;
   }
 
-  export interface UnionMember1 {
+  export interface APIKeyID {
     apiKeyId: string;
 
     type: 'apiKey';

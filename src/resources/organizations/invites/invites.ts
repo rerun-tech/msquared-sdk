@@ -62,7 +62,7 @@ export interface OrganizationInvite {
 
   createdAt: string;
 
-  createdBy: OrganizationInvite.UnionMember0 | OrganizationInvite.UnionMember1;
+  createdBy: OrganizationInvite.UserID | OrganizationInvite.APIKeyID;
 
   email: string;
 
@@ -70,13 +70,13 @@ export interface OrganizationInvite {
 }
 
 export namespace OrganizationInvite {
-  export interface UnionMember0 {
+  export interface UserID {
     type: 'user';
 
     userId: string;
   }
 
-  export interface UnionMember1 {
+  export interface APIKeyID {
     apiKeyId: string;
 
     type: 'apiKey';
