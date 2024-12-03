@@ -7,10 +7,14 @@ export {
   type WebWorldInstanceUpdateParams,
   type WebWorldInstanceListParams,
 } from './web-world-instances/index';
-export { WebWorldInstancesQuota, type WebWorldInstancesQuotaListResponse } from './web-world-instances-quota';
+export {
+  WebWorldInstancesQuota,
+  type WorldQuota,
+  type WebWorldInstancesQuotaListResponse,
+} from './web-world-instances-quota';
 export {
   WebWorldInstancesUsage,
   type WebWorldInstancesUsageListResponse,
   type WebWorldInstancesUsageListParams,
 } from './web-world-instances-usage';
-export { Worlds, type WorldQuota } from './worlds';
+export { Worlds } from './worlds';

@@ -18,7 +18,7 @@ import {
   OrganizationRetrieveResponse,
   Organizations,
 } from './resources/organizations/organizations';
-import { WorldQuota, Worlds } from './resources/worlds/worlds';
+import { Worlds } from './resources/worlds/worlds';
 
 export interface ClientOptions {
   /**
@@ -181,7 +181,7 @@ export declare namespace MSquared {
 
   export { MMLObjects as MMLObjects };
 
-  export { Worlds as Worlds, type WorldQuota as WorldQuota };
+  export { Worlds as Worlds };
 
   export type Project = API.Project;
   export type World = API.World;
