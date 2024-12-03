@@ -113,7 +113,7 @@ export interface MMLObjectInstance {
 
   name: string;
 
-  source: MMLObjectInstance.UnionMember0 | MMLObjectInstance.UnionMember1;
+  source: MMLObjectInstance.TemplateSource | MMLObjectInstance.Source;
 
   url: string;
 
@@ -135,14 +135,14 @@ export namespace MMLObjectInstance {
     type: 'apiKey';
   }
 
-  export interface UnionMember0 {
-    templateVersionId: UnionMember0.UnionMember0 | UnionMember0.UnionMember1;
+  export interface TemplateSource {
+    templateVersionId: TemplateSource.VersionID | TemplateSource.TemplateID;
 
     type: 'template';
   }
 
-  export namespace UnionMember0 {
-    export interface UnionMember0 {
+  export namespace TemplateSource {
+    export interface VersionID {
       templateId: string;
 
       versionId: string;
@@ -150,14 +150,14 @@ export namespace MMLObjectInstance {
       alwaysDefault?: false;
     }
 
-    export interface UnionMember1 {
+    export interface TemplateID {
       alwaysDefault: true;
 
       templateId: string;
     }
   }
 
-  export interface UnionMember1 {
+  export interface Source {
     source: string;
 
     type: 'source';
@@ -203,7 +203,7 @@ export namespace InstanceUsageResponse {
 export interface InstanceCreateParams {
   name: string;
 
-  source: InstanceCreateParams.UnionMember0 | InstanceCreateParams.UnionMember1;
+  source: InstanceCreateParams.TemplateSource | InstanceCreateParams.Source;
 
   id?: string;
 
@@ -213,14 +213,14 @@ export interface InstanceCreateParams {
 }
 
 export namespace InstanceCreateParams {
-  export interface UnionMember0 {
-    templateVersionId: UnionMember0.UnionMember0 | UnionMember0.UnionMember1;
+  export interface TemplateSource {
+    templateVersionId: TemplateSource.VersionID | TemplateSource.TemplateID;
 
     type: 'template';
   }
 
-  export namespace UnionMember0 {
-    export interface UnionMember0 {
+  export namespace TemplateSource {
+    export interface VersionID {
       templateId: string;
 
       versionId: string;
@@ -228,14 +228,14 @@ export namespace InstanceCreateParams {
       alwaysDefault?: false;
     }
 
-    export interface UnionMember1 {
+    export interface TemplateID {
       alwaysDefault: true;
 
       templateId: string;
     }
   }
 
-  export interface UnionMember1 {
+  export interface Source {
     source: string;
 
     type: 'source';
@@ -253,18 +253,18 @@ export interface InstanceUpdateParams {
 
   parameters?: Record<string, unknown>;
 
-  source?: InstanceUpdateParams.UnionMember0 | InstanceUpdateParams.UnionMember1;
+  source?: InstanceUpdateParams.TemplateSource | InstanceUpdateParams.Source;
 }
 
 export namespace InstanceUpdateParams {
-  export interface UnionMember0 {
-    templateVersionId: UnionMember0.UnionMember0 | UnionMember0.UnionMember1;
+  export interface TemplateSource {
+    templateVersionId: TemplateSource.VersionID | TemplateSource.TemplateID;
 
     type: 'template';
   }
 
-  export namespace UnionMember0 {
-    export interface UnionMember0 {
+  export namespace TemplateSource {
+    export interface VersionID {
       templateId: string;
 
       versionId: string;
@@ -272,14 +272,14 @@ export namespace InstanceUpdateParams {
       alwaysDefault?: false;
     }
 
-    export interface UnionMember1 {
+    export interface TemplateID {
       alwaysDefault: true;
 
       templateId: string;
     }
   }
 
-  export interface UnionMember1 {
+  export interface Source {
     source: string;
 
     type: 'source';
