@@ -5,20 +5,17 @@ import * as Core from './core';
 import * as Errors from './error';
 import * as Uploads from './uploads';
 import * as API from './resources/index';
-import { Profile, ProfileResource } from './resources/profile';
-import { ProjectCreateParams, Projects } from './resources/projects';
-import { Identity } from './resources/identity/identity';
 import { MMLObjects } from './resources/mml-objects/mml-objects';
-import { Objects } from './resources/objects/objects';
 import {
   Organization,
   OrganizationCreateParams,
   OrganizationListParams,
   OrganizationListResponse,
   OrganizationRetrieveResponse,
+  OrganizationUpdateParams,
   Organizations,
 } from './resources/organizations/organizations';
-import { Worlds } from './resources/worlds/worlds';
+import { World, Worlds } from './resources/worlds/worlds';
 
 export interface ClientOptions {
   /**
@@ -113,10 +110,6 @@ export class MSquared extends Core.APIClient {
   }
 
   organizations: API.Organizations = new API.Organizations(this);
-  identity: API.Identity = new API.Identity(this);
-  projects: API.Projects = new API.Projects(this);
-  profile: API.ProfileResource = new API.ProfileResource(this);
-  objects: API.Objects = new API.Objects(this);
   mmlObjects: API.MMLObjects = new API.MMLObjects(this);
   worlds: API.Worlds = new API.Worlds(this);
 
@@ -153,10 +146,6 @@ export class MSquared extends Core.APIClient {
 }
 
 MSquared.Organizations = Organizations;
-MSquared.Identity = Identity;
-MSquared.Projects = Projects;
-MSquared.ProfileResource = ProfileResource;
-MSquared.Objects = Objects;
 MSquared.MMLObjects = MMLObjects;
 MSquared.Worlds = Worlds;
 export declare namespace MSquared {
@@ -168,23 +157,13 @@ export declare namespace MSquared {
     type OrganizationRetrieveResponse as OrganizationRetrieveResponse,
     type OrganizationListResponse as OrganizationListResponse,
     type OrganizationCreateParams as OrganizationCreateParams,
+    type OrganizationUpdateParams as OrganizationUpdateParams,
     type OrganizationListParams as OrganizationListParams,
   };
 
-  export { Identity as Identity };
-
-  export { Projects as Projects, type ProjectCreateParams as ProjectCreateParams };
-
-  export { ProfileResource as ProfileResource, type Profile as Profile };
-
-  export { Objects as Objects };
-
   export { MMLObjects as MMLObjects };
 
-  export { Worlds as Worlds };
-
-  export type Project = API.Project;
-  export type World = API.World;
+  export { Worlds as Worlds, type World as World };
 }
 
 export { toFile, fileFromPath } from './uploads';

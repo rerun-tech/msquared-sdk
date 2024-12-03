@@ -28,7 +28,7 @@ import MSquared from 'msquared';
 const client = new MSquared();
 
 async function main() {
-  const world = await client.worlds.webWorldInstances.create('your-project', { name: 'your-web-world' });
+  const world = await client.worlds.instances.create('your-project', { name: 'your-web-world' });
 
   console.log(world.id);
 }
@@ -47,8 +47,8 @@ import MSquared from 'msquared';
 const client = new MSquared();
 
 async function main() {
-  const params: MSquared.Worlds.WebWorldInstanceCreateParams = { name: 'name' };
-  const world: MSquared.World = await client.worlds.webWorldInstances.create('projectId', params);
+  const params: MSquared.Worlds.InstanceCreateParams = { name: 'name' };
+  const world: MSquared.World = await client.worlds.instances.create('projectId', params);
 }
 
 main();
@@ -65,17 +65,15 @@ a subclass of `APIError` will be thrown:
 <!-- prettier-ignore -->
 ```ts
 async function main() {
-  const world = await client.worlds.webWorldInstances
-    .create('projectId', { name: 'name' })
-    .catch(async (err) => {
-      if (err instanceof MSquared.APIError) {
-        console.log(err.status); // 400
-        console.log(err.name); // BadRequestError
-        console.log(err.headers); // {server: 'nginx', ...}
-      } else {
-        throw err;
-      }
-    });
+  const world = await client.worlds.instances.create('projectId', { name: 'name' }).catch(async (err) => {
+    if (err instanceof MSquared.APIError) {
+      console.log(err.status); // 400
+      console.log(err.name); // BadRequestError
+      console.log(err.headers); // {server: 'nginx', ...}
+    } else {
+      throw err;
+    }
+  });
 }
 
 main();
@@ -110,7 +108,7 @@ const client = new MSquared({
 });
 
 // Or, configure per-request:
-await client.worlds.webWorldInstances.create('projectId', { name: 'name' }, {
+await client.worlds.instances.create('projectId', { name: 'name' }, {
   maxRetries: 5,
 });
 ```
@@ -127,7 +125,7 @@ const client = new MSquared({
 });
 
 // Override per-request:
-await client.worlds.webWorldInstances.create('projectId', { name: 'name' }, {
+await client.worlds.instances.create('projectId', { name: 'name' }, {
   timeout: 5 * 1000,
 });
 ```
@@ -148,11 +146,11 @@ You can also use the `.withResponse()` method to get the raw `Response` along wi
 ```ts
 const client = new MSquared();
 
-const response = await client.worlds.webWorldInstances.create('projectId', { name: 'name' }).asResponse();
+const response = await client.worlds.instances.create('projectId', { name: 'name' }).asResponse();
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
-const { data: world, response: raw } = await client.worlds.webWorldInstances
+const { data: world, response: raw } = await client.worlds.instances
   .create('projectId', { name: 'name' })
   .withResponse();
 console.log(raw.headers.get('X-My-Header'));
@@ -260,7 +258,7 @@ const client = new MSquared({
 });
 
 // Override per-request:
-await client.worlds.webWorldInstances.create(
+await client.worlds.instances.create(
   'projectId',
   { name: 'name' },
   {

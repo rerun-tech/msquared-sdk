@@ -1,17 +1,17 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-export { Subresources, type WorldQuota } from './subresources';
 export {
-  WebWorldInstances,
-  type WebWorldInstanceListResponse,
-  type WebWorldInstanceCreateParams,
-  type WebWorldInstanceUpdateParams,
-  type WebWorldInstanceListParams,
-} from './web-world-instances/index';
+  Instances,
+  type InstanceListResponse,
+  type InstanceCreateParams,
+  type InstanceUpdateParams,
+  type InstanceListParams,
+} from './instances/index';
+export { Subresources, type WorldQuota } from './subresources';
 export { WebWorldInstancesQuota, type WebWorldInstancesQuotaListResponse } from './web-world-instances-quota';
 export {
   WebWorldInstancesUsage,
   type WebWorldInstancesUsageListResponse,
   type WebWorldInstancesUsageListParams,
 } from './web-world-instances-usage';
-export { Worlds } from './worlds';
+export { Worlds, type World } from './worlds';

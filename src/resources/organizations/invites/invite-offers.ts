@@ -5,6 +5,21 @@ import * as Core from '../../../core';
 
 export class InviteOffers extends APIResource {
   /**
+   * Accept an invite offer
+   */
+  create(
+    organizationId: string,
+    inviteId: string,
+    body: InviteOfferCreateParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<unknown> {
+    return this._client.post(`/v1/identity/organizations/${organizationId}/invite-offers/${inviteId}`, {
+      body,
+      ...options,
+    });
+  }
+
+  /**
    * Get an invite offer
    */
   retrieve(
@@ -50,6 +65,12 @@ export namespace OrganizationInviteOffer {
   }
 }
 
+export type InviteOfferCreateResponse = unknown;
+
+export interface InviteOfferCreateParams {
+  token: string;
+}
+
 export interface InviteOfferRetrieveParams {
   /**
    * The token for the invite
@@ -60,6 +81,8 @@ export interface InviteOfferRetrieveParams {
 export declare namespace InviteOffers {
   export {
     type OrganizationInviteOffer as OrganizationInviteOffer,
+    type InviteOfferCreateResponse as InviteOfferCreateResponse,
+    type InviteOfferCreateParams as InviteOfferCreateParams,
     type InviteOfferRetrieveParams as InviteOfferRetrieveParams,
   };
 }

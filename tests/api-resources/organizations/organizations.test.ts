@@ -7,7 +7,7 @@ const client = new MSquared({ baseURL: process.env['TEST_API_BASE_URL'] ?? 'http
 
 describe('resource organizations', () => {
   test('create: only required params', async () => {
-    const responsePromise = client.organizations.create('organizationId', { name: 'name' });
+    const responsePromise = client.organizations.create({ name: 'name' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -18,7 +18,7 @@ describe('resource organizations', () => {
   });
 
   test('create: required and optional params', async () => {
-    const response = await client.organizations.create('organizationId', { name: 'name' });
+    const response = await client.organizations.create({ name: 'name' });
   });
 
   test('retrieve', async () => {
@@ -37,6 +37,21 @@ describe('resource organizations', () => {
     await expect(
       client.organizations.retrieve('organizationId', { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(MSquared.NotFoundError);
+  });
+
+  test('update: only required params', async () => {
+    const responsePromise = client.organizations.update('organizationId', { name: 'name' });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  test('update: required and optional params', async () => {
+    const response = await client.organizations.update('organizationId', { name: 'name' });
   });
 
   test('list', async () => {
