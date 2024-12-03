@@ -23,7 +23,7 @@ export class ObjectTemplates extends APIResource {
     projectId: string,
     body: ObjectTemplateCreateParams,
     options?: Core.RequestOptions,
-  ): Core.APIPromise<ObjectTemplatesObjectTemplatesAPI.MmlObjectTemplate> {
+  ): Core.APIPromise<ObjectTemplatesObjectTemplatesAPI.MMLObjectTemplate> {
     return this._client.post(`/v1/mml-objects/${projectId}/object-templates/`, { body, ...options });
   }
 
@@ -34,7 +34,7 @@ export class ObjectTemplates extends APIResource {
     projectId: string,
     templateId: string,
     options?: Core.RequestOptions,
-  ): Core.APIPromise<ObjectTemplatesObjectTemplatesAPI.MmlObjectTemplate> {
+  ): Core.APIPromise<ObjectTemplatesObjectTemplatesAPI.MMLObjectTemplate> {
     return this._client.get(`/v1/mml-objects/${projectId}/object-templates/${templateId}`, options);
   }
 
@@ -46,7 +46,7 @@ export class ObjectTemplates extends APIResource {
     templateId: string,
     body: ObjectTemplateUpdateParams,
     options?: Core.RequestOptions,
-  ): Core.APIPromise<ObjectTemplatesObjectTemplatesAPI.MmlObjectTemplate> {
+  ): Core.APIPromise<ObjectTemplatesObjectTemplatesAPI.MMLObjectTemplate> {
     return this._client.post(`/v1/mml-objects/${projectId}/object-templates/${templateId}`, {
       body,
       ...options,
@@ -81,7 +81,7 @@ export interface ObjectTemplateListResponse {
 
   offset: number;
 
-  templates: Array<ObjectTemplatesObjectTemplatesAPI.MmlObjectTemplate>;
+  templates: Array<ObjectTemplatesObjectTemplatesAPI.MMLObjectTemplate>;
 
   totalResults: number;
 }

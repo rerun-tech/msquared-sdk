@@ -2,7 +2,7 @@
 
 export * from './shared';
 export { Identity } from './identity/identity';
-export { MmlObjects } from './mml-objects/mml-objects';
+export { MMLObjects } from './mml-objects/mml-objects';
 export { Objects } from './objects/objects';
 export {
   Organizations,

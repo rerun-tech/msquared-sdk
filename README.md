@@ -28,9 +28,9 @@ import MSquared from 'msquared';
 const client = new MSquared();
 
 async function main() {
-  const profile = await client.profile.retrieve();
+  const world = await client.worlds.webWorldInstances.create('your-project', { name: 'your-web-world' });
 
-  console.log(profile.id);
+  console.log(world.id);
 }
 
 main();

@@ -16,16 +16,16 @@ import {
   ObjectTemplates,
 } from './object-templates/object-templates';
 
-export class MmlObjects extends APIResource {
+export class MMLObjects extends APIResource {
   objectInstancesUsage: ObjectInstancesUsageAPI.ObjectInstancesUsage =
     new ObjectInstancesUsageAPI.ObjectInstancesUsage(this._client);
   objectTemplates: ObjectTemplatesAPI.ObjectTemplates = new ObjectTemplatesAPI.ObjectTemplates(this._client);
 }
 
-MmlObjects.ObjectInstancesUsage = ObjectInstancesUsage;
-MmlObjects.ObjectTemplates = ObjectTemplates;
+MMLObjects.ObjectInstancesUsage = ObjectInstancesUsage;
+MMLObjects.ObjectTemplates = ObjectTemplates;
 
-export declare namespace MmlObjects {
+export declare namespace MMLObjects {
   export {
     ObjectInstancesUsage as ObjectInstancesUsage,
     type ObjectInstancesUsageListResponse as ObjectInstancesUsageListResponse,

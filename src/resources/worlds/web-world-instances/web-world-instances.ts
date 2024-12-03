@@ -102,7 +102,7 @@ export interface WebWorldInstanceCreateParams {
 
   generalConfiguration?: WebWorldInstanceCreateParams.GeneralConfiguration;
 
-  mmlDocumentsConfiguration?: WebWorldInstanceCreateParams.MmlDocumentsConfiguration;
+  mmlDocumentsConfiguration?: WebWorldInstanceCreateParams.MMLDocumentsConfiguration;
 }
 
 export namespace WebWorldInstanceCreateParams {
@@ -248,22 +248,22 @@ export namespace WebWorldInstanceCreateParams {
     maxUserConnections?: number;
   }
 
-  export interface MmlDocumentsConfiguration {
-    mmlDocuments: Record<string, MmlDocumentsConfiguration.MmlDocuments>;
+  export interface MMLDocumentsConfiguration {
+    mmlDocuments: Record<string, MMLDocumentsConfiguration.MMLDocuments>;
   }
 
-  export namespace MmlDocumentsConfiguration {
-    export interface MmlDocuments {
+  export namespace MMLDocumentsConfiguration {
+    export interface MMLDocuments {
       url: string;
 
-      position?: MmlDocuments.Position;
+      position?: MMLDocuments.Position;
 
-      rotation?: MmlDocuments.Rotation;
+      rotation?: MMLDocuments.Rotation;
 
-      scale?: MmlDocuments.Scale;
+      scale?: MMLDocuments.Scale;
     }
 
-    export namespace MmlDocuments {
+    export namespace MMLDocuments {
       export interface Position {
         x: number;
 
@@ -306,7 +306,7 @@ export interface WebWorldInstanceUpdateParams {
 
   generalConfiguration?: WebWorldInstanceUpdateParams.GeneralConfiguration;
 
-  mmlDocumentsConfiguration?: WebWorldInstanceUpdateParams.MmlDocumentsConfiguration;
+  mmlDocumentsConfiguration?: WebWorldInstanceUpdateParams.MMLDocumentsConfiguration;
 
   name?: string;
 }
@@ -454,22 +454,22 @@ export namespace WebWorldInstanceUpdateParams {
     maxUserConnections?: number;
   }
 
-  export interface MmlDocumentsConfiguration {
-    mmlDocuments: Record<string, MmlDocumentsConfiguration.MmlDocuments>;
+  export interface MMLDocumentsConfiguration {
+    mmlDocuments: Record<string, MMLDocumentsConfiguration.MMLDocuments>;
   }
 
-  export namespace MmlDocumentsConfiguration {
-    export interface MmlDocuments {
+  export namespace MMLDocumentsConfiguration {
+    export interface MMLDocuments {
       url: string;
 
-      position?: MmlDocuments.Position;
+      position?: MMLDocuments.Position;
 
-      rotation?: MmlDocuments.Rotation;
+      rotation?: MMLDocuments.Rotation;
 
-      scale?: MmlDocuments.Scale;
+      scale?: MMLDocuments.Scale;
     }
 
-    export namespace MmlDocuments {
+    export namespace MMLDocuments {
       export interface Position {
         x: number;
 

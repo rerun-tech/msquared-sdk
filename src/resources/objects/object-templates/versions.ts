@@ -4,12 +4,12 @@ import { APIResource } from '../../../resource';
 
 export class Versions extends APIResource {}
 
-export interface MmlObjectTemplateVersion {
+export interface MMLObjectTemplateVersion {
   id: string;
 
   createdAt: string;
 
-  createdBy: MmlObjectTemplateVersion.UnionMember0 | MmlObjectTemplateVersion.UnionMember1;
+  createdBy: MMLObjectTemplateVersion.UnionMember0 | MMLObjectTemplateVersion.UnionMember1;
 
   source: string;
 
@@ -18,7 +18,7 @@ export interface MmlObjectTemplateVersion {
   parametersSchema?: Record<string, unknown>;
 }
 
-export namespace MmlObjectTemplateVersion {
+export namespace MMLObjectTemplateVersion {
   export interface UnionMember0 {
     type: 'user';
 
@@ -33,5 +33,5 @@ export namespace MmlObjectTemplateVersion {
 }
 
 export declare namespace Versions {
-  export { type MmlObjectTemplateVersion as MmlObjectTemplateVersion };
+  export { type MMLObjectTemplateVersion as MMLObjectTemplateVersion };
 }

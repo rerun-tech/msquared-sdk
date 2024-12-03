@@ -2,18 +2,18 @@
 
 import { APIResource } from '../../../resource';
 import * as VersionsAPI from './versions';
-import { MmlObjectTemplateVersion, Versions } from './versions';
+import { MMLObjectTemplateVersion, Versions } from './versions';
 
 export class ObjectTemplates extends APIResource {
   versions: VersionsAPI.Versions = new VersionsAPI.Versions(this._client);
 }
 
-export interface MmlObjectTemplate {
+export interface MMLObjectTemplate {
   id: string;
 
   createdAt: string;
 
-  createdBy: MmlObjectTemplate.UnionMember0 | MmlObjectTemplate.UnionMember1;
+  createdBy: MMLObjectTemplate.UnionMember0 | MMLObjectTemplate.UnionMember1;
 
   name: string;
 
@@ -22,7 +22,7 @@ export interface MmlObjectTemplate {
   description?: string;
 }
 
-export namespace MmlObjectTemplate {
+export namespace MMLObjectTemplate {
   export interface UnionMember0 {
     type: 'user';
 
@@ -39,7 +39,7 @@ export namespace MmlObjectTemplate {
 ObjectTemplates.Versions = Versions;
 
 export declare namespace ObjectTemplates {
-  export { type MmlObjectTemplate as MmlObjectTemplate };
+  export { type MMLObjectTemplate as MMLObjectTemplate };
 
-  export { Versions as Versions, type MmlObjectTemplateVersion as MmlObjectTemplateVersion };
+  export { Versions as Versions, type MMLObjectTemplateVersion as MMLObjectTemplateVersion };
 }
