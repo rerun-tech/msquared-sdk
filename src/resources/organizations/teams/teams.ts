@@ -20,8 +20,6 @@ import {
   Permissions,
   TeamPermission,
 } from './permissions';
-import * as ProfileAPI from './profile';
-import { Profile, ProfileResource } from './profile';
 import * as ProjectsAPI from './projects';
 import {
   ProjectCreateParams,
@@ -34,7 +32,6 @@ import {
 export class Teams extends APIResource {
   members: MembersAPI.Members = new MembersAPI.Members(this._client);
   permissions: PermissionsAPI.Permissions = new PermissionsAPI.Permissions(this._client);
-  profile: ProfileAPI.ProfileResource = new ProfileAPI.ProfileResource(this._client);
   projects: ProjectsAPI.Projects = new ProjectsAPI.Projects(this._client);
 
   /**
@@ -146,7 +143,6 @@ export interface TeamListParams {
 
 Teams.Members = Members;
 Teams.Permissions = Permissions;
-Teams.ProfileResource = ProfileResource;
 Teams.Projects = Projects;
 
 export declare namespace Teams {
@@ -174,8 +170,6 @@ export declare namespace Teams {
     type PermissionCreateParams as PermissionCreateParams,
     type PermissionListParams as PermissionListParams,
   };
-
-  export { ProfileResource as ProfileResource, type Profile as Profile };
 
   export {
     Projects as Projects,

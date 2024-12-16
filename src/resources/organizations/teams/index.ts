@@ -15,7 +15,6 @@ export {
   type PermissionCreateParams,
   type PermissionListParams,
 } from './permissions';
-export { ProfileResource, type Profile } from './profile';
 export {
   Projects,
   type ProjectRetrieveResponse,

@@ -150,16 +150,6 @@ Methods:
 - <code title="get /v1/identity/organizations/{organizationId}/teams/{teamId}/permissions">client.organizations.teams.permissions.<a href="./src/resources/organizations/teams/permissions.ts">list</a>(organizationId, teamId, { ...params }) -> PermissionListResponse</code>
 - <code title="delete /v1/identity/organizations/{organizationId}/teams/{teamId}/permissions/{permissionId}">client.organizations.teams.permissions.<a href="./src/resources/organizations/teams/permissions.ts">delete</a>(organizationId, teamId, permissionId) -> void</code>
 
-### Profile
-
-Types:
-
-- <code><a href="./src/resources/organizations/teams/profile.ts">Profile</a></code>
-
-Methods:
-
-- <code title="get /v1/identity/profile">client.organizations.teams.profile.<a href="./src/resources/organizations/teams/profile.ts">retrieve</a>() -> Profile</code>
-
 ### Projects
 
 Types:
