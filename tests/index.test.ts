@@ -183,7 +183,7 @@ describe('instantiate client', () => {
     expect(client.authToken).toBe('My Auth Token');
   });
 
-  test('with overriden environment variable arguments', () => {
+  test('with overridden environment variable arguments', () => {
     // set options via env var
     process.env['MSQUARED_API_KEY'] = 'another My Auth Token';
     const client = new MSquared({ authToken: 'My Auth Token' });
