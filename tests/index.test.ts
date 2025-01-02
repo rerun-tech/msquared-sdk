@@ -122,6 +122,23 @@ describe('instantiate client', () => {
     expect(spy).toHaveBeenCalledTimes(1);
   });
 
+  test('normalized method', async () => {
+    let capturedRequest: RequestInit | undefined;
+    const testFetch = async (url: RequestInfo, init: RequestInit = {}): Promise<Response> => {
+      capturedRequest = init;
+      return new Response(JSON.stringify({}), { headers: { 'Content-Type': 'application/json' } });
+    };
+
+    const client = new MSquared({
+      baseURL: 'http://localhost:5000/',
+      authToken: 'My Auth Token',
+      fetch: testFetch,
+    });
+
+    await client.patch('/foo');
+    expect(capturedRequest?.method).toEqual('PATCH');
+  });
+
   describe('baseUrl', () => {
     test('trailing slash', () => {
       const client = new MSquared({
@@ -183,7 +200,7 @@ describe('instantiate client', () => {
     expect(client.authToken).toBe('My Auth Token');
   });
 
-  test('with overriden environment variable arguments', () => {
+  test('with overridden environment variable arguments', () => {
     // set options via env var
     process.env['MSQUARED_API_KEY'] = 'another My Auth Token';
     const client = new MSquared({ authToken: 'My Auth Token' });
